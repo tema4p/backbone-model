@@ -19,9 +19,8 @@ $(function () {
             //слушаем изминения объекта
             this.on('change',function(){
                 console.log('obj changed');
-
                 //получаем только измененную часть объекта
-                var json = app.myObject.changedAttributes();
+                var json = this.changedAttributes();
                 console.log(json);
             });
         },
@@ -37,7 +36,7 @@ $(function () {
 
         //добавляем функцию, увеличивающую size
         increaseSize: function() {
-            app.myObject.set({
+            this.set({
                 size: this.get('size')+100
             },{
                 validate:true //проверяем на валидность
